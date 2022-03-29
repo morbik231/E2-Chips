@@ -1,0 +1,31 @@
+@name XOXO/\ over head
+@inputs
+@outputs
+@persist T I
+@trigger
+T+=5
+interval(10)
+if(first()) {
+holoCreate(1)
+holoCreate(2)
+holoCreate(3)
+holoModel(2,"hq_box")
+holoModel(1,"hq_sphere")
+}
+holoPos(1,owner():shootPos()+vec(0,0,sin(T)*5+15))
+if(I < 180) {I++}
+if(I == 180) {I = -180}
+holoAng(1,ang(0,I,I))
+holoColor(1,vec(random(255),random(255),random(255)))
+holoColor(2,vec(random(255),random(255),random(255)))
+holoColor(3,vec(random(255),random(255),random(255)))
+holoMaterial(1,"models/wireframe")
+holoMaterial(2,"models/wireframe")
+holoPos(2,owner():shootPos()+vec(0,0,sin(T)*10+30))
+if(I < 180) {I++}
+if(I == 180) {I = -180}
+holoColor(3,vec(random(255),random(255),random(255)))
+holoPos(3,owner():shootPos()+vec(0,0,sin(T)*10+30))
+if(I < 180) {I++}
+if(I == 180) {I = -180}
+# Made by Realmer
