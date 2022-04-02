@@ -1,0 +1,27 @@
+@name Realmer Rainbow script
+@persist Rainbow
+
+if(first()){Rainbow = 1}
+
+interval(1)
+runOnChat(1)
+
+if(Rainbow == 1){
+    owner():setColor(hsv2rgb((curtime()*200)%360,1,1))
+    owner():setMaterial("models/wireframe")   
+}
+else{
+    owner():setColor(vec(255))
+    owner():setMaterial("models/wirefrmae")    
+}
+
+if((owner():lastSaid()=="/rainbow") & chatClk(owner())){
+    hideChat(1)
+    Rainbow = 1   
+}
+if((owner():lastSaid()=="/normal") & chatClk(owner())){
+    hideChat(1)
+    Rainbow = 0   
+}
+
+#Made by Realmer
