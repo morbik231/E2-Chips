@@ -9,6 +9,10 @@ runOnChat(1)
 if(Rainbow == 1){
     owner():setColor(hsv2rgb((curtime()*200)%360,1,1))
     owner():setMaterial("models/wireframe")   
+    owner():weapon():setMaterial("models/wireframe")
+    owner():weapon():setColor(hsv2rgb((curtime()*200)%360,1,1))
+
+    
 }
 else{
     owner():setColor(vec(255))
@@ -22,6 +26,9 @@ if((owner():lastSaid()=="/rainbow") & chatClk(owner())){
 if((owner():lastSaid()=="/normal") & chatClk(owner())){
     hideChat(1)
     Rainbow = 0   
+    owner():setMaterial("n")
+    owner():weapon():setMaterial("n")
 }
 
 #Made by Realmer
+#Change list - Добавил смену цвета оружия и матерьяла, теперь оружие так-же RGB и wireframe
